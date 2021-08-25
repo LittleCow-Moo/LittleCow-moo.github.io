@@ -1,6 +1,13 @@
+<link href="//dict.toastfriends.cf/style.css" rel="stylesheet" />
 <script>
+nowsec=3
 var intervalID = setInterval(function() {
-    alert('十秒鐘又到了！');
+    document.getElementById("text").innerHTML='哞!將在'+nowsec+'秒後把你導向到邀請頁面!';
+    nowsec=nowsec-1
 }, 1000);
 </script>
 <meta http-equiv="refresh" content="3; url=https://discord.com/oauth2/authorize?client_id=836204711454834688&permissions=3072&redirect_uri=https%3A%2F%2Fdiscord.gg%2FbQJyuAD9hw&response_type=code&scope=bot%20guilds.join">
+<img src="/littlecow.png" />
+<font id="text">
+哞!將在3秒後把你導向到邀請頁面!
+</font>
