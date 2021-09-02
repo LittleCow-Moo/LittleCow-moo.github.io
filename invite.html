@@ -5,7 +5,7 @@ nowsec=3
 var intervalID = setInterval(function() {
     document.getElementById("text").innerHTML='哞!將在'+nowsec+'秒後把你導向到邀請頁面!';
     nowsec=nowsec-1
-    if (nowsec%3=0) {
+    if (nowsec=0) {
         nowsec=3
         window.location.replace('https://discord.com/oauth2/authorize?client_id=836204711454834688&permissions=3072&redirect_uri=https%3A%2F%2Fdiscord.gg%2FbQJyuAD9hw&response_type=code&scope=bot%20guilds.join%20applications.commands')
     }
