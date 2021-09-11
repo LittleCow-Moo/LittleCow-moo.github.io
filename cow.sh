@@ -1,6 +1,14 @@
 #!/bin/bash
 
-alias cow='sh cow.sh'
+alias Hey,牛牛!='source cow'
+alias Hey,牛牛='source cow'
+alias hey,牛牛='source cow'
+alias hey,牛牛!='source cow'
+alias hey牛牛='source cow'
+alias 牛牛='source cow'
+alias 牛='source cow'
+alias :cow:='source cow'
+alias 🐮='source cow'
 echo 哞!有什麼事嗎?
 read -p "" heycow
 if [ $heycow = 幫助 ]; then
