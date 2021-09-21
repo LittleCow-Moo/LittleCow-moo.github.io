@@ -18,6 +18,7 @@ echo 笑話 :讓我為你說一句笑話!
 echo 猜硬幣 :讓我陪你玩猜硬幣小遊戲!
 echo 說話 :讓我一字不差的學你說話!
 echo 時間 :看看現在的時間!
+echo 網頁截圖 :好奇某個網站什麼樣子嗎?讓我來幫你看它的樣子!
 echo 敬請期待更多功能!哞~
 elif [ $heycow = 笑話 ] || [ $heycow = 笑話! ] || [ $heycow = 說笑話! ] || [ $heycow = 說笑話 ]; then
 echo 哞!讓我想想...
@@ -47,6 +48,21 @@ read -p "" cowsay
 echo $cowsay
 elif [ $heycow = 時間 ] || [ $heycow = 時間! ]; then
 echo 哞!現在的時間是:$(date +'%Y/%m/%d 星期%u %H:%M:%S')
+elif [ $heycow = 網頁截圖! ] || [ $heycow = 網頁截圖 ] || [ $heycoww = 截圖! ] || [ $heycow = 截圖 ]; then
+echo 哞!你要我給你看哪個網站的截圖?請輸入網址!
+read -p "" _cowscreenshot
+if [[ $_cowscreenshot == "http://"* ]] || [[ $_cowscreenshot == "https://"* ]]; then
+if [ -n $(curl) ]; then
+mkdir cowthings
+mkdir cowthings/screenshot
+curl -s https://urlscan.io/liveshot/?width=1920\&height=1080\&url=$_cowscreenshot > cowthings/screenshot/screenshot.png
+echo 哞!我把 $_cowscreenshot 的截圖存到 cowthings/screenshot/screenshot.png 裡了!
+else
+echo 哞!你尚未安裝curl!安裝後再重試一次吧!
+fi
+else
+echo 哞!這不是網址!
+fi
 elif [ $heycow = 🍀 ]; then
 echo 謝謝!
 fi 2> _cowhideerror
